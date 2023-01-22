@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+<link href="{{ asset('css/IdClient.css') }}" rel="stylesheet" />
+{% endblock %}
+{% block javascripts %}
+<script src="{{ asset('css/IdClient.js') }}"></script>
+{% endblock %}
+
+
+{% block title %}Client
+{% endblock %}
+
+{% block body %}
+    <a class="btn btn-primary me-auto" href="{{ path('create_address', {'id': client.idclient}) }}">Ajouter Adresse</a>
+
+    <a  class="btn btn-primary me-auto" href="{{ path('lister_adresse', {'id': client.idclient}) }}">Consulter Mes Adresse</a>
+
+    {% if client.numero is empty %}
+
+    <a class="btn btn-primary me-auto"  href="{{ path('create_numero', {'id': client.idclient}) }}">Ajouter Numero</a>
+    {% endif %}
+    <a  class="btn btn-primary me-auto" href="{{ path('lister_num', {'id': client.idclient}) }}">Consulter Mes Numeros</a>
+l
+    <a  class="btn btn-primary me-auto" href="{{ path('lister_num', {'id': client.idclient}) }}">Consulter Mes Commande Client</a>
+
+    <div class="form-body" >
+        <div class=""  style="margin-top: 0px">
+{#            <div class="row"  style="margin-top: 0px">#}
+            <div class="form-holder " style="min-height: 5vh;">
+                <div class="form-content">
+                    <div class="form-items">
+                        <h3>Review your Personel Information</h3>
+                        {{ form_start(formc) }}
+                        <p>your information your choice</p>
+
+
+                            <div class="col-md-12">
+
+                                {{ form_errors(formc.nom) }}
+                                {{ form_widget(formc.nom) }}
+
+                            </div>
+
+                            <div class="col-md-12">
+                                {{ form_errors(formc.prenom) }}
+                                {{ form_widget(formc.prenom) }}
+                            </div>
+
+                            <div class="form-button mt-3">
+                                <button id="submit" type="submit" class="btn btn-primary">Modifier</button>
+                            </div>
+                        {{ form_end(formc) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

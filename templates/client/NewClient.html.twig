@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Client Ajouter
+{% endblock %}
+{% block stylesheets %}
+    <link href="{{ asset('css/IdClient.css') }}" rel="stylesheet" />
+{% endblock %}
+{% block javascripts %}
+    <script src="{{ asset('css/IdClient.js') }}"></script>
+{% endblock %}
+
+{% block body %}
+
+
+
+
+
+
+
+    <div class="form-body" >
+        <div class=""  style="margin-top: 0px">
+            {#            <div class="row"  style="margin-top: 0px">#}
+            <div class="form-holder " style="min-height: 5vh;">
+                <div class="form-content">
+                    <div class="form-items">
+                        <h3>Allez rejoignez nous</h3>
+                        <p>un pas simple vers un choix exceptionnel</p>
+
+                            {{ form_start(formClient) }}
+                            <div class="col-md-12">
+                                {{ form_errors(formClient.nom) }}
+                                {{ form_widget(formClient.nom) }}
+
+                              {#  <input class="form-control" type="text" name="name" placeholder="{{ client.nom }}" >
+                                <div class="valid-feedback">nom valid</div>
+                                <div class="invalid-feedback">champ vide </div>#}
+                            </div>
+
+                            <div class="col-md-12">
+                                {{ form_errors(formClient.prenom) }}
+                                {{ form_widget(formClient.prenom) }}
+                              {#  <input class="form-control" type="text" name="name" placeholder="First Name" content="{{ client.prenom }}" required>
+                                <div class="valid-feedback">nom valid</div>
+                                <div class="invalid-feedback">champ vide </div>#}
+                            </div>
+
+                            <div class="form-button mt-3">
+                                <button  type="submit" class="btn btn-primary">Ajouter</button>
+
+                            </div>
+                            {{ form_end(formClient) }}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}

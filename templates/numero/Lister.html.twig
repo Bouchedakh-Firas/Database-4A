@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Client Liste
+{% endblock %}
+
+{% block body %}
+    <br>
+
+    <br>
+    <table class="table table-hover">
+        <thead>
+        <tr class="table-dark">
+            <th scope="col">Client</th>
+            <th scope="col">Libelle</th>
+            <th scope="col">Code Pays</th>
+            <th scope="col">Numero</th>
+            <th scope="col"> </th>
+            <th scope="col"> </th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for num in numeros %}
+            <tr scope="row">
+
+                <td>{{ num.libelle }}</td>
+                <td>{{ num.codepays }}</td>
+                <td>  {{ num.numero }}</td>
+                <td> <a class="btn btn-warning"   href="{{ path('consulter_num', {'id': num.id}) }}">Modifier</a></td>
+                <td> <a class="btn btn-danger"   href="{{ path('remove_num', {'id': num.id}) }}">Supprimer</a></td>
+
+
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+
+{% endblock %}

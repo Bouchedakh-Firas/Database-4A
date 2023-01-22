@@ -1,0 +1,91 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Ajouter Adresse
+{% endblock %}
+{% block stylesheets %}
+    <link href="{{ asset('css/IdClient.css') }}" rel="stylesheet" />
+{% endblock %}
+{% block javascripts %}
+    <script src="{{ asset('css/IdClient.js') }}"></script>
+{% endblock %}
+
+{% block body %}
+
+    <div class="form-body" >
+        <div class=""  style="margin-top: 0px">
+            <div class="form-holder " style="min-height: 5vh;">
+                <div class="form-content">
+                    <div class="form-items">
+                        <h3>Ajouter une Adresse</h3>
+
+                        {{ form_start(formAddress) }}
+                        <div class="row g-3">
+                            <div class="col-sm-7">
+                                <label>Pays</label>
+                                {{ form_errors(formAddress.pays) }}
+                                {{ form_widget(formAddress.pays) }}
+                            </div>
+                            <div class="col-sm">
+                                <label>Région</label>
+                                {{ form_errors(formAddress.region) }}
+                                {{ form_widget(formAddress.region) }}
+                            </div>
+                            <div class="col-sm">
+                                <label>Ville</label>
+                                {{ form_errors(formAddress.ville) }}
+                                {{ form_widget(formAddress.ville) }}                            </div>
+                        </div>
+                        <br>
+                        <div class="row g-3">
+                            <div class="col-sm-6">
+                                <label>Code postal</label>
+                                {{ form_errors(formAddress.codepostal) }}
+                                {{ form_widget(formAddress.codepostal) }}
+                            </div>
+                            <div class="col-sm">
+                                <label>Voie</label>
+                                {{ form_errors(formAddress.voie) }}
+                                {{ form_widget(formAddress.voie) }}
+                            </div>
+                            <div class="col-sm">
+                                <label>Rue</label>
+                                {{ form_errors(formAddress.rue) }}
+                                {{ form_widget(formAddress.rue) }}                            </div>
+                        </div>
+                        <br>
+                        <div class="row g-3">
+                            <div class="col-sm-7">
+                                <label>Numéro Appartement</label>
+                                {{ form_errors(formAddress.appt) }}
+                                {{ form_widget(formAddress.appt) }}
+                            </div>
+                            <div class="col-sm">
+                                <label>Batiment</label>
+                                {{ form_errors(formAddress.batiment) }}
+                                {{ form_widget(formAddress.batiment) }}
+                            </div>
+
+
+                        </div>
+                        <div class="row g-3">
+                        <div class="col-sm">
+                            <label>Client</label>
+                            {{ form_errors(formAddress.client) }}
+                            {{ form_widget(formAddress.client) }}
+                        </div>
+                        </div>
+                        <div class="form-button mt-3">
+                            <button  type="submit" class="btn btn-primary">Modifier</button>
+
+                        </div>
+                        {{ form_end(formAddress) }}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}

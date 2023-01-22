@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Client Liste
+{% endblock %}
+
+{% block body %}
+    <br>
+
+    <br>
+    <table class="table table-hover">
+        <thead>
+        <tr class="table-dark">
+            <th scope="col">Pays</th>
+            <th scope="col">Région</th>
+            <th scope="col">Ville</th>
+            <th scope="col">Code Postal</th>
+            <th scope="col"> Voie, Rue</th>
+            <th scope="col"> Batiment, Appartement</th>
+            <th scope="col"> </th>
+            <th scope="col"> </th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for adress in Adresses %}
+            <tr scope="row">
+                <td>{{ adress.pays }}</td>
+                <td>{{ adress.region }}</td>
+                <td>  {{ adress.ville }}</td>
+                <td>  {{ adress.codepostal }}</td>
+                <td>  {{ adress.voie }} {{ adress.rue }}</td>
+                <td>  {{ adress.appt }} {{ adress.batiment }}</td>
+                <td> <a class="btn btn-warning"   href="{{ path('consulter_adress', {'id': adress.idaddress}) }}">Modifier</a></td>
+                <td> <a class="btn btn-danger"   href="{{ path('remove_add', {'id': adress.idaddress}) }}">Supprimer</a></td>
+
+
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+
+{% endblock %}

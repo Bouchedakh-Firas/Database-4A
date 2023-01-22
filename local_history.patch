@@ -1,0 +1,17 @@
+Index: src/Controller/NumeroController.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Controller/NumeroController.php b/src/Controller/NumeroController.php
+--- a/src/Controller/NumeroController.php	
++++ b/src/Controller/NumeroController.php	(date 1674420969852)
+@@ -91,7 +91,7 @@
+ 
+     }
+     /**
+-     * @Route ("/numero/create/{id}", name="consulter_num")
++     * @Route ("/numero/modifier/{id}", name="consulter_num")
+      */
+     public function consulterNum(NumeroRepository $repo,$id,Request $request, EntityManagerInterface $em){
+ 
