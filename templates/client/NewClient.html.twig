@@ -28,6 +28,7 @@
 
                             {{ form_start(formClient) }}
                             <div class="col-md-12">
+                                <label for=""> Nom</label>
                                 {{ form_errors(formClient.nom) }}
                                 {{ form_widget(formClient.nom) }}
 
@@ -37,6 +38,7 @@
                             </div>
 
                             <div class="col-md-12">
+                                <label for=""> Prenom</label>
                                 {{ form_errors(formClient.prenom) }}
                                 {{ form_widget(formClient.prenom) }}
                               {#  <input class="form-control" type="text" name="name" placeholder="First Name" content="{{ client.prenom }}" required>

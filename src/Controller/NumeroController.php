@@ -78,15 +78,15 @@ class NumeroController extends AbstractController
     /**
      * @Route ("/numero/remove/{id}", name="remove_num")
      */
-    public function RemoveAdress(AddressRepository $repo,$id,Request $request,EntityManagerInterface $em){
-        $adress = $repo->find($id);
+    public function RemoveNumero(NumeroRepository $repo,$id,Request $request,EntityManagerInterface $em){
+        $num = $repo->find($id);
 
         $this->em = $em;
-        $this->em->remove($adress);
+        $this->em->remove($num);
         $this->em->flush();
 
 
-        return $this->redirectToRoute('app_client');
+        return $this->redirectToRoute('app_numero');
 
 
     }
@@ -123,5 +123,6 @@ class NumeroController extends AbstractController
         return $this->render('numero/consulter.html.twig',
             ['formn'=> $form->createView()]);
     }
+
 
 }
